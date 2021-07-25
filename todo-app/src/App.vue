@@ -1,33 +1,34 @@
 <template>
-  <div>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Header title="Task Tracker"/>
-    <Tasks :tasks="tasks"/>
-  </div>
+  <main>
+    <Header 
+      @toggle-add-task="toggleAddTask" 
+      title="Task Tracker"
+      :showAddTasks="showAddTasks"/>
+      <!-- able to pass props into the view components -->
+      <router-view :showAddTasks="showAddTasks"></router-view>
+    <Footer></Footer>
+  </main>
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import Tasks from './components/Tasks.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Tasks
+    Footer
   },
   data(){
     return {
-      tasks: []
+      showAddTasks: false
     }
   },
-  created() {
-    this.tasks = [
-      { 
-        text: 'walk dog',
-        id: 1
-      }
-    ]
+  methods: {
+    toggleAddTask(){
+      this.showAddTasks = !this.showAddTasks
+    },
   }
 }
 </script>
