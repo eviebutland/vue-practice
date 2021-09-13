@@ -41,11 +41,6 @@ export default createStore({
       commit('changeColourCode', color) // this is calling the mutation 
     }
   },
-  getters: { // retrieve data - able to filter etc 
-    getSquared(state){
-      return state.counter * state.counter
-    }
-  },
   modules: { // able to break down state futher, having its own state, actions, mutations and getters
 
   }

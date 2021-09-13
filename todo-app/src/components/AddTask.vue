@@ -48,7 +48,6 @@ export default {
       this.text = ''
       this.day = ''
       this.reminder = false
-      console.log(newTask)
 
       this.$emit('add-task', newTask)
     }
