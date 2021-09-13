@@ -3,7 +3,7 @@
     <div 
       :style="{color: $store.state.colorCode}"
       class="counter">
-      {{ $store.state.counter }}
+      {{ printCounter() }}
     </div>
   </div>
 </template>
@@ -13,6 +13,11 @@ export default {
   name: 'Counter',
   props: {
     msg: String
+  },
+  methods: {
+    printCounter() {
+      return this.$store.state.counter
+    }
   }
 }
 </script>

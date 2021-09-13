@@ -1,12 +1,20 @@
 <template>
   <div class="buttons">
-    <button @click="$store.dispatch('decreaseCounter')">-</button>
-    <button @click="$store.dispatch('increaseCounter')">+</button>
+    <button @click="decreaseCounter">-</button>
+    <button @click="increaseCounter">+</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Buttons'
+  name: 'Buttons',
+  methods: {
+    decreaseCounter() {
+      return this.$store.dispatch('decreaseCounter')
+    },
+    increaseCounter(){
+      return this.$store.dispatch('increaseCounter')
+    }
+  }
 }
 </script>

@@ -1,13 +1,7 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils'
-import getSquared from '../../store/getters'
-import Vuex from 'vuex'
+import { shallowMount } from '@vue/test-utils'
 import Buttons from '@/components/Buttons.vue'
-const localVue = createLocalVue()
 
-localVue.use(Vuex)
-
-
-describe('HelloWorld.vue', () => {
+describe('Buttons.vue', () => {
   let button;
   let wrapper;
   beforeEach(() => {
@@ -17,8 +11,9 @@ describe('HelloWorld.vue', () => {
   it('contains a button', () => {
     expect(button).toBeDefined()
   })
-  it('fires a dispatch method when clicked', async () => {
-    await button.trigger('click')
-    console.log('button', button)
-  })
+  // it('fires a dispatch method when clicked', async () => {
+  //   await button.trigger('click')
+  //   console.log('button', button)
+  // })
 })
+

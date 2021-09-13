@@ -21,7 +21,6 @@ export default createStore({
     async increaseCounter({ commit }){
       try {
         const res = await axios.get('https://www.random.org/integers/?num=1&min=1&max=100&col=5&base=10&format=plain&rnd=new')
-        console.log(res.data)
         commit('increaseCounter', res.data) // this is calling the mutation 
       } catch (error) {
         console.log(error)
@@ -31,7 +30,6 @@ export default createStore({
     async decreaseCounter({ commit }){
       try {
         const res = await axios.get('https://www.random.org/integers/?num=1&min=1&max=100&col=5&base=10&format=plain&rnd=new')
-        console.log(res.data)
         commit('decreaseCounter', res.data) // this is calling the mutation 
       } catch (error) {
         console.log(error)
@@ -43,5 +41,11 @@ export default createStore({
   },
   modules: { // able to break down state futher, having its own state, actions, mutations and getters
 
+  },
+  getters: { // retrieve data - able to filter etc 
+    getSquared(state){
+      console.log('get squared', state.counter * state.counter)
+      return state.counter * state.counter
+    }
   }
 })
