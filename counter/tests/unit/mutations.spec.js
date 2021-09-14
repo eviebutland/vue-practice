@@ -4,7 +4,8 @@ describe('Mutations', () => {
   let state;
   beforeEach(() => {
     state = {
-      counter: 5
+      counter: 5,
+      colorCode: 'blue'
     }
   })
   describe('IncreaseState', () => {
@@ -21,6 +22,14 @@ describe('Mutations', () => {
     })
     it('Updates state from 5 to -1', () => {
       expect(mutations.decreaseCounter(state, 6))
+    })
+  })
+  describe('ChangeColourCode', () => {
+    it('changes from blue to pink', () => {
+      expect(mutations.changeColourCode(state, 'pink')).toBe('pink')
+    })
+    it('changes from blue to #cacaca', () => {
+      expect(mutations.changeColourCode(state, '#cacaca')).toBe('#cacaca')
     })
   })
 })

@@ -3,10 +3,10 @@ const mutations = {
    return state.counter += payload
   },
   decreaseCounter(state, payload){
-    state.counter -= payload
+    return state.counter -= payload
   },
   changeColourCode(state, color){
-    state.colorCode = color
+    return state.colorCode = color
   }
 }
 
